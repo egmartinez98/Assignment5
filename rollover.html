@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 5, Part 3 - Image Rollovers</title>
+<script>
+
+/*step 2
+Now, within the script tag of your web page, create a helper function called getImage(). This function will accept one parameter. Within the function, return the result of getting an element by its ID, passing in the function’s argument as a parameter into the getElementById() method.*/
+ 
+        
+ function getImage(par1) {
+     "use strict";
+     return document.getElementById(par1);
+ }
+
+/* step 3
+Create a new constructor function called Rollover that accepts two arguments including imageId and newImageURL.*/
+    
+   
+ /*var Rollover = function Rollover(imageId, newImageURL) {
+         "use strict";
+     };*/
+    
+    /*step 4 Create a copy of this function and store it in a variable
+    Create a new object variable called target and store this within it.*/
+    
+ /*var Rollover = function Rollover(imageId, newImageURL) {
+     "use strict";
+     var target = this;
+ }*/
+
+ 
+    
+    
+    
+    /* step 5
+    Create 3 properties associated with target including newImageURL, image, and oldImageURL.*/
+ /*var Rollover = function Rollover(imageId, newImageURL) {
+     "use strict";
+     var target = this;
+     target.newImageURL = "";
+     target.image = "";
+     target.oldImageURL = ""
+ }*/
+
+	
+	/* step 6
+    Store the value of the newImageURL parameter within the newImageURL property.*/
+    /*var Rollover = function Rollover(imageId, newImageURL) {
+     "use strict";
+     var target = this;
+     target.newImageURL = newImageURL;
+     target.imageId = "";
+     target.oldImageURL = ""
+ }*/
+   
+    
+/* step 7
+Store the return value of the getImage() function, passing in the imageID argument as a parameter within the image property.*/
+ /*var Rollover = function Rollover(imageId, newImageURL) {
+     "use strict";
+     var target = this;
+     target.newImageURL = newImageURL;
+     target.image = getImage(imageId);
+     target.oldImageURL = ""
+ }*/
+    
+    
+    /* step 8
+   Store this.image.src (the URL or source of the image you’re working with) within the oldImageURL property.*/
+ function Rollover(imageId, newImageURL) {
+     "use strict";
+     var target = this;
+     target.newImageURL = newImageURL;
+     target.image = getImage(imageId);
+     target.oldImageURL = this.image.source;
+ }
+    
+/* step 9
+Create an event handler for onmouseover and one for onmouseout for each target image, or: */
+/*target.image.onmouseover = function() {
+
+ }
+target.image.onmouseout = function() {
+
+}*/
+
+/* step 9
+In the mouseover, set the src property of the target.image to the newImageURL property.*/
+ window.target.image.onmouseover = function () {
+     "use strict";
+     window.target.image.src = window.target.newImageURL;
+ };
+
+/* step 10
+In the mouseout, set the src property of the target.image to the oldImageURL property.*/
+ window.target.image.onmouseout = function () {
+     "use strict";
+     window.target.image.src = window.target.oldImageURL;
+ };
+ 
+ /*window.onload = function () {
+     "use strict";
+     var roll1 = new Rollover("image1", "home_over.png");
+     var roll2 = new Rollover("image2", "aboutus_over.png");
+     var roll3 = new Rollover("image3", "solutions_over.png");
+     var roll4 = new Rollover("image4", "support_over.png");
+     var roll5 = new Rollover("image5", "contactus_over.png");
+ };*/
+    
+    
+</script>
+</head>
+
+<body>
+	<!-- 01 -->
+    <img src="images/home.png" id="image1">
+    <img src="images/aboutus.png" id="image2">
+    <img src="images/solutions.png" id="image3">
+    <img src="images/support.png" id="image4">
+    <img src="images/contactus.png" id="image5">
+
+        
+        
+</body>
+    
+</html>
